@@ -40,7 +40,7 @@ dag = DAG(
 # Task to get data from given HTTP end point
 get_http_data = SimpleHttpOperator(
     task_id="get_http_data",
-    http_conn_id="http_conn_id_demo",
+    http_conn_id="my_http_connection",
     method="GET",
     endpoint="/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo",
     response_filter = lambda response : json.loads(response.text),
